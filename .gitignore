@@ -2,3 +2,6 @@ venv
 .vscode
 IntensiviHomework/db.sqlite3
 IntensiviHomework/IntensiviHomework/__pycache__
+IntensiviHomework/about/__pycache__
+IntensiviHomework/catalog/__pycache__
+IntensiviHomework/homepage/__pycache__
