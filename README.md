@@ -1,7 +1,7 @@
 # IntensiviHomework
 ## Installation
 ```bash
-git clone https://github.com/liltousin/IntensiviHomework.git
+gh repo clone liltousin/IntensiviHomework
 cd IntensiviHomework
 pip install -r requirements.txt
 ```
