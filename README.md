@@ -3,6 +3,8 @@
 ```bash
 gh repo clone liltousin/IntensiviHomework
 cd IntensiviHomework
+python -m venv venv
+venv/Scripts/activate.bat
 pip install -r requirements.txt
 ```
 ### Usage
