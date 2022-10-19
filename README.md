@@ -9,7 +9,6 @@ cd IntensiviHomework
 python -m venv venv
 venv/Scripts/activate
 pip install -r requirements.txt
-git update-index --assume-unchanged .env
 ```
 ### Linux 
 ```bash
@@ -18,7 +17,6 @@ cd IntensiviHomework
 python3 -m venv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
-git update-index --assume-unchanged .env
 ```
 ## Setting up .env
 The .evn file already has a test configuration. Any local parameter changes will not be tracked by the git. Just plug and play.
