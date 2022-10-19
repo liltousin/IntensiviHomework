@@ -12,8 +12,7 @@ pip install -r requirements.txt
 ```
 ### Linux 
 ```bash
-sudo apt install gh
-gh repo clone liltousin/IntensiviHomework
+git clone https://github.com/liltousin/IntensiviHomework.git
 cd IntensiviHomework
 python3 -m venv venv
 source venv/bin/activate
