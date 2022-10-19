@@ -21,7 +21,12 @@ pip3 install -r requirements.txt
 git update-index --assume-unchanged .env
 ```
 ## Setting up env
+### Description
 The .evn file already has a test configuration. Any local parameter changes will not be tracked by the git. Just plug and play.
+### How to write the parameters
+Any string is passed to the SECRET_KEY parameter
+The parameter DEBUG can have only 2 values ('True' or 'False')
+Into ALLOWED_HOSTS parameter you have to write the hosts, separated by comma with space (", ")
 ## Run
 ### Windows
 ```bash
