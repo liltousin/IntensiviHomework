@@ -21,7 +21,7 @@ pip3 install -r requirements.txt
 git update-index --assume-unchanged .env
 ```
 ## Setting up env
-The .evn file already has a test configuration. Any local parameter changes will not be tracked by the git
+The .evn file already has a test configuration. Any local parameter changes will not be tracked by the git. Just plug and play.
 ## Run
 ### Windows
 ```bash
