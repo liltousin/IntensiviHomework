@@ -1,3 +1,6 @@
+# IntensiviHomework
+## Workflow status
+![example workflow](https://github.com/liltousin/IntensiviHomework/actions/workflows/python-package.yml/badge.svg)
 ## Installation
 ### Windows
 ```bash
