@@ -4,7 +4,7 @@
 ## Installation
 ### Windows
 ```bash
-gh repo clone liltousin/IntensiviHomework
+git clone https://github.com/liltousin/IntensiviHomework.git
 cd IntensiviHomework
 python -m venv venv
 venv/Scripts/activate
