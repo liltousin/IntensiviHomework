@@ -1,6 +1,6 @@
 # IntensiviHomework
 ## Workflow status
-![example workflow](https://github.com/liltousin/IntensiviHomework/actions/workflows/python-package.yml/badge.svg?event=push&name=flake8)
+![example workflow](https://github.com/liltousin/IntensiviHomework/actions/workflows/python-package.yml/badge.svg?event=push)
 ## Installation
 ### Windows
 ```bash
