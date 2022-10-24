@@ -5,5 +5,5 @@
 from django.http import HttpResponse
 
 
-def home(request, pk):
-    return HttpResponse(f'Главная {pk}')
+def home(request):
+    return HttpResponse('Главная')
