@@ -8,17 +8,17 @@ class StaticURLTests(TestCase):
         response = Client().get('/catalog/')
         self.assertEqual(response.status_code, 200)
 
-        # response = Client().get('/catalog/0/')
-        # self.assertEqual(response.status_code, 404)
-
-        response = Client().get('/catalog/0/')
-        self.assertEqual(response.status_code, 200)
-
         response = Client().get('/catalog/1/')
         self.assertEqual(response.status_code, 200)
 
-        response = Client().get('/catalog/0983123/')
+        response = Client().get('/catalog/983123/')
         self.assertEqual(response.status_code, 200)
+
+        response = Client().get('/catalog/0/')
+        self.assertEqual(response.status_code, 404)
+
+        response = Client().get('/catalog/0322/')
+        self.assertEqual(response.status_code, 404)
 
         response = Client().get('/catalog/-1/')
         self.assertEqual(response.status_code, 404)
