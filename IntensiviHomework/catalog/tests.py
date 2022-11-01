@@ -85,3 +85,6 @@ class StaticURLTests(TestCase):
 
         response = Client().get('/catalog/q-w  -123er')
         self.assertEqual(response.status_code, 404)
+
+
+class 

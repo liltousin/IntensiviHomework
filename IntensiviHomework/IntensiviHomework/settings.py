@@ -35,6 +35,7 @@ ALLOWED_HOSTS = str(os.getenv('ALLOWED_HOSTS')).split(', ')
 # Application definition
 
 INSTALLED_APPS = [
+    'Core.apps.CoreConfig',
     'about.apps.AboutConfig',
     'catalog.apps.CatalogConfig',
     'homepage.apps.HomepageConfig',
@@ -114,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 

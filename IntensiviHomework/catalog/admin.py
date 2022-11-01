@@ -1,3 +1,20 @@
-# from django.contrib import admin
+from django.contrib import admin
+from catalog.models import Item, Tag, Category
 
-# Register your models here.
+
+@admin.register(Item)
+class ItemAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_published')
+    list_editable = ('is_published',)
+    list_display_links = ('name',)
+    filter_horizontal = ('tags',)
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_published')
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_published')
