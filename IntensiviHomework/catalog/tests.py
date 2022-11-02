@@ -1,6 +1,7 @@
-from .models import Category, Item, Tag
 from django.core.exceptions import ValidationError
 from django.test import Client, TestCase
+
+from .models import Category, Item, Tag
 
 # Create your tests here.
 
@@ -108,8 +109,9 @@ class ModelsTest(TestCase):
     def test_unable_create_one_letter(self):
         item_count = Item.objects.count()
         with self.assertRaises(ValidationError):
-            self.item = Item(name='test', category=self.category,
-                             text='пквыкен')
+            self.item = Item(
+                name='test', category=self.category, text='пквыкен'
+            )
             self.item.full_clean()
             self.item.save()
             self.item.tags.add(self.tag)
@@ -117,8 +119,9 @@ class ModelsTest(TestCase):
         self.assertEqual(Item.objects.count(), item_count)
 
         with self.assertRaises(ValidationError):
-            self.item_2 = Item(name='test', category=self.category,
-                               text='пквыкен')
+            self.item_2 = Item(
+                name='test', category=self.category, text='пквыкен'
+            )
             self.item_2.full_clean()
             self.item_2.save()
             self.item_2.tags.add(self.tag)
@@ -126,8 +129,9 @@ class ModelsTest(TestCase):
         self.assertEqual(Item.objects.count(), item_count)
 
         with self.assertRaises(ValidationError):
-            self.item_3 = Item(name='test', category=self.category,
-                               text='пквыкен')
+            self.item_3 = Item(
+                name='test', category=self.category, text='пквыкен'
+            )
             self.item_3.full_clean()
             self.item_3.save()
             self.item_3.tags.add(self.tag)
@@ -135,27 +139,33 @@ class ModelsTest(TestCase):
         self.assertEqual(Item.objects.count(), item_count)
 
         with self.assertRaises(ValidationError):
-            self.item_4 = Item(name='test', category=self.category,
-                               text='сидит прЕ!восходно!')
+            self.item_4 = Item(
+                name='test', category=self.category, text='сидит прЕ!восходно!'
+            )
             self.item_4.full_clean()
             self.item_4.save()
             self.item_4.tags.add(self.tag)
             self.item_4.save()
         self.assertEqual(Item.objects.count(), item_count)
 
-
     def test_able_create_one_letter(self):
         item_count = Item.objects.count()
-        self.item = Item(name='test', category=self.category,
-                         text='превосходно сидит на всех')
+        self.item = Item(
+            name='test',
+            category=self.category,
+            text='превосходно сидит на всех',
+        )
         self.item.full_clean()
         self.item.save()
         self.item.tags.add(self.tag)
         self.item.save()
         self.assertEqual(Item.objects.count(), item_count + 1)
 
-        self.item_2 = Item(name='test', category=self.category,
-                           text='превосходно! сидит на всех')
+        self.item_2 = Item(
+            name='test',
+            category=self.category,
+            text='превосходно! сидит на всех',
+        )
         self.item_2.full_clean()
         self.item_2.save()
         self.item_2.tags.add(self.tag)
