@@ -110,6 +110,8 @@ class ModelsTest(TestCase):
             name='test',
             category=self.category,
             text='превосходно!')
+        self.item.full_clean()
+        self.item.save()
 
     def test_unable_create_one_letter(self):
         item_count = Item.objects.count()
@@ -121,6 +123,7 @@ class ModelsTest(TestCase):
             self.item.full_clean()
             self.item.save()
             self.item.tags.add(self.tag)
-        self.assertEqual(
-            Item.objects.count(),
-            item_count)
+            self.item.save()
+            self.assertEqual(
+                Item.objects.count(),
+                item_count)
