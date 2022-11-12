@@ -4,3 +4,4 @@ sorl-thumbnail==12.9.0
 Pillow==9.3.0
 django-cleanup==6.0.0
 django-ckeditor==6.5.1
+django-js-asset==2.0.0
