@@ -1,0 +1,31 @@
+{% comment %} <header>
+    {% with request.resolver_match.view_name as view_name %}
+        {% if view_name == 'homepage:home' %}
+            <p>Шапка главной старицы</p>
+        {% elif view_name == 'about:description' %}
+            <p>Шапка страницы о проекте</p>
+        {% elif view_name == 'catalog:item_list' %}
+            <p>Шапка списка товаров</p>
+        {% else %}
+            <p>Шапка не главной страницы</p>
+        {% endif %}
+    {% endwith %}
+</header> {% endcomment %}
+
+{% load static %}
+
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img src="{% static 'img/logo.jpg' %}" width="32" height="32">
+        <span class="fs-4">Мой сайт</span>
+      </a>
+      {% with request.resolver_match.view_name as view_name %}
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{% url 'homepage:home'%}" class="nav-link{% if view_name == 'homepage:home' %} active{% endif %}" aria-current="page">На главную</a></li>
+        <li class="nav-item"><a href="{% url 'about:description'%}" class="nav-link{% if view_name == 'about:description' %} active{% endif %}">О проекте</a></li>
+        <li class="nav-item"><a href="{% url 'catalog:item_list'%}" class="nav-link{% if view_name == 'catalog:item_list' %} active{% endif %}">Список товаров</a></li>
+      </ul>
+      {% endwith %}
+    </header>
+  </div>
