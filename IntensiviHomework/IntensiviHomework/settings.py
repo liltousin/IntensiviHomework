@@ -35,6 +35,7 @@ ALLOWED_HOSTS = str(os.getenv('ALLOWED_HOSTS')).split(', ')
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor',
     'sorl.thumbnail',
     'django_cleanup.apps.CleanupConfig',
     'Core.apps.CoreConfig',
