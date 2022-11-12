@@ -28,7 +28,7 @@ class Item(BaseModel):
     )
 
     upload = models.ImageField(
-        upload_to='uploads/%Y/%m', verbose_name='превью'
+        upload_to='uploads/%Y/%m', verbose_name='превью', blank=True
     )
 
     @property
