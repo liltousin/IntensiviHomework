@@ -1,13 +1,7 @@
-{% comment %} <footer>
-    <div class="container">
-        <p><a href={% url 'about:description'%}>О нас</p>
-    </div>
-</footer> {% endcomment %}
-
 <div class="container">
     <footer class="py-3 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       </ul>
-      <p class="text-center text-muted">© 2022 Sergey Pletnev</p>
+      <p class="text-center text-muted">© {% now "Y" %} Sergey Pletnev</p>
     </footer>
   </div>
