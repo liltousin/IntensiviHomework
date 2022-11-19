@@ -3,5 +3,16 @@
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       </ul>
       <p class="text-center text-muted">© {% now "Y" %} Sergey Pletnev</p>
+      <div  class="text-center text-muted">
+        Текущее время:
+        <div id="time"/>
+      </div>
+      <script>
+        const el = document.getElementById("time")
+        el.textContent = new Date().toLocaleTimeString();
+        setInterval(() => {
+          el.textContent = new Date().toLocaleTimeString();
+        }, 1000)
+      </script>
     </footer>
   </div>
