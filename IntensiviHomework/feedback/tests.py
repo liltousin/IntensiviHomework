@@ -32,3 +32,10 @@ class FormTest(TestCase):
         self.assertRedirects(response, reverse('feedback:feedback'))
         self.assertEqual(feedback_count + 1, Feedback.objects.count())
         self.assertTrue(Feedback.objects.filter(text='Тест').exists())
+
+    def test_form_in_context(self):
+        form_data = {'text': 'Тест'}
+        response = Client().post(
+            reverse('feedback:feedback'), data=form_data, follow=True
+        )
+        self.assertIn('form', response.context)
