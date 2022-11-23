@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'django_cleanup.apps.CleanupConfig',
     'Core.apps.CoreConfig',
+    'feedback.apps.FeedbackConfig',
     'about.apps.AboutConfig',
     'catalog.apps.CatalogConfig',
     'homepage.apps.HomepageConfig',
@@ -65,9 +66,7 @@ ROOT_URLCONF = 'IntensiviHomework.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'templates'
-        ],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,9 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static_dev'
-]
+STATICFILES_DIRS = [BASE_DIR / 'static_dev']
 STATIC_ROOT = 'static'
 
 # Default primary key field type
@@ -147,3 +144,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = BASE_DIR / 'send_mail'

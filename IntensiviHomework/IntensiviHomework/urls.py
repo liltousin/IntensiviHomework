@@ -22,6 +22,7 @@ from django.urls import include, path
 # from homepage import views
 
 urlpatterns = [
+    path('feedback/', include('feedback.urls', namespace='feedback')),
     path('', include('homepage.urls', namespace='homepage')),
     path('catalog/', include('catalog.urls', namespace='catalog')),
     path('about/', include('about.urls', namespace='about')),
