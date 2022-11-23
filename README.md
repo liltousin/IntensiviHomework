@@ -1,6 +1,7 @@
 # IntensiviHomework
 ## Workflow status
 ![flake8](https://github.com/liltousin/IntensiviHomework/actions/workflows/python-package.yml/badge.svg?event=push)
+![django](https://github.com/liltousin/IntensiviHomework/actions/workflows/django.yml/badge.svg?event=push)
 ## Installation
 ### Windows
 ```bash
