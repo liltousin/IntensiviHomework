@@ -4,8 +4,6 @@ from feedback.models import Feedback
 
 from . import forms
 
-# Create your tests here.
-
 
 class FormTest(TestCase):
     @classmethod
@@ -23,19 +21,27 @@ class FormTest(TestCase):
         self.assertEquals(text_help_text, 'Напишите отзыв')
         self.assertNotEquals(text_help_text, 'Напишите отзыв123')
 
-    def test_create_task(self):
-        feedback_count = Feedback.objects.count()
-        form_data = {'text': 'Тест'}
-        response = Client().post(
-            reverse('feedback:feedback'), data=form_data, follow=True
-        )
-        self.assertRedirects(response, reverse('feedback:feedback'))
-        self.assertEqual(feedback_count + 1, Feedback.objects.count())
-        self.assertTrue(Feedback.objects.filter(text='Тест').exists())
-
     def test_form_in_context(self):
-        form_data = {'text': 'Тест'}
+        form_data = {'text': 'Тестовый фидбек'}
         response = Client().post(
             reverse('feedback:feedback'), data=form_data, follow=True
         )
         self.assertIn('form', response.context)
+
+    def test_redirect(self):
+        form_data = {'text': 'Тестовый фидбек'}
+        response = Client().post(
+            reverse('feedback:feedback'), data=form_data, follow=True
+        )
+        self.assertRedirects(response, reverse('feedback:feedback'))
+
+    def test_add_feedback(self):
+        feedback_count = Feedback.objects.count()
+        form_data = {'text': 'Тестовый фидбек'}
+        Client().post(
+            reverse('feedback:feedback'), data=form_data, follow=True
+        )
+        self.assertEqual(feedback_count + 1, Feedback.objects.count())
+        self.assertTrue(
+            Feedback.objects.filter(text='Тестовый фидбек').exists()
+        )
