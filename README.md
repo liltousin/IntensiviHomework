@@ -16,9 +16,9 @@ git update-index --assume-unchanged .env
 ```bash
 git clone https://github.com/liltousin/IntensiviHomework.git
 cd IntensiviHomework
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 git update-index --assume-unchanged .env
 ```
 ## Setting up .env
