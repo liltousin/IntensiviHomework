@@ -16,7 +16,7 @@ git update-index --assume-unchanged .env
 ```bash
 git clone https://github.com/liltousin/IntensiviHomework.git
 cd IntensiviHomework
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 git update-index --assume-unchanged .env
@@ -34,6 +34,6 @@ python IntensiviHomework/manage.py runserver
 ```
 ### Linux
 ```bash
-python3 IntensiviHomework/manage.py runserver
+python IntensiviHomework/manage.py runserver
 ```
 Then go to http://127.0.0.1:8000/
