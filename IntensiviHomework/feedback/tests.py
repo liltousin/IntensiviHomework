@@ -2,14 +2,14 @@ from django.test import Client, TestCase
 from django.urls import reverse
 from feedback.models import Feedback
 
-from . import forms
+from .forms import FeedbackForm
 
 
 class FormTest(TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         super().setUpClass()
-        cls.form = forms.Form()
+        cls.form = FeedbackForm()
         cls.feedback_count = Feedback.objects.count()
         form_data = {'text': 'Тестовый фидбек'}
         cls.response = Client().post(
