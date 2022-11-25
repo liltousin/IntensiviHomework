@@ -1,17 +1,17 @@
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render
 
-from . import forms, models
+from .forms import FeedbackForm
 
 
 def feedback(request):
     template_name = 'feedback/index.html'
-    form = forms.Form(request.POST or None)
+    form = FeedbackForm(request.POST or None)
     context = {'form': form}
 
-    if request.method == 'POST' and form.is_valid():
+    if form.is_valid():
+        form.save()
         text = form.cleaned_data['text']
-        models.Feedback.objects.create(text=text)
         message_header = text.split()[0]
         for word in text.split()[1:]:
             if len(message_header + word) <= 32:
