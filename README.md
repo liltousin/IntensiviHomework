@@ -18,7 +18,7 @@ git clone https://github.com/liltousin/IntensiviHomework.git
 cd IntensiviHomework
 python3 -m venv venv
 source venv/bin/activate
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 git update-index --assume-unchanged .env
 ```
 ## Setting up .env
@@ -27,13 +27,8 @@ The .evn file already has a test configuration. Any local parameter changes will
 Any string is passed to the SECRET_KEY parameter<br>
 The parameter DEBUG can have only 2 values ('True' or 'False')<br>
 Into ALLOWED_HOSTS parameter you have to write the hosts, separated by comma with space (", ")<br>
-## Run
-### Windows
+## Run (Windows & Linux)
 ```bash
 python IntensiviHomework/manage.py runserver
-```
-### Linux
-```bash
-python3 IntensiviHomework/manage.py runserver
 ```
 Then go to http://127.0.0.1:8000/
